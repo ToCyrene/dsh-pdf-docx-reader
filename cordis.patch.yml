@@ -1,0 +1,14 @@
+# PDF / DOCX reader bundle layer. The config below is the composition default;
+# override it in the profile patch when tuning limits for this installation.
+- insert:
+    - id: pdf-docx-reader
+      name: 'dsh-pdf-docx-reader'
+      config:
+        readLimit: 300
+        readMaxChars: 49152
+        searchContext: 160
+        searchMaxHits: 10
+        cacheDocuments: 8
+        inferHeadings: true
+        pageMarkers: true
+        maxFileBytes: 104857600

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "PDF & DOCX reader",
+    "description": "Read and search local PDF and Word documents as line-addressed Markdown. The two tools return an outline, page/line locations, DOCX tables, image placeholders, and bounded windows with continuation. PDF is text-first: scanned pages are reported instead of OCRed, and complex PDF table pages use layout-preserved text rather than a reconstructed table."
+  }
+}

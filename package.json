@@ -1,0 +1,35 @@
+{
+  "name": "dsh-pdf-docx-reader",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local PDF and DOCX reading for DeepSeek Harness agents: line-addressed Markdown, outlines, tables, and bounded search.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.13.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "fflate": "^0.8.2",
+    "fast-xml-parser": "4.5.3",
+    "pdfjs-dist": "6.3.289"
+  }
+}
