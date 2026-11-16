@@ -4,7 +4,3 @@ pnpm-debug.log*
 *.log
 .DS_Store
 Thumbs.db
-
-# Local-only sample documents used by the manual/optional tests
-/test.pdf
-/test.docx
