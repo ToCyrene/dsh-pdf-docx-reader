@@ -188,11 +188,17 @@ maxFileBytes: 104857600
 
 如果本机 profile 已用 link 安装本插件，入口应指向仓库根目录。修改 Host 代码后，通常需要让 Loader 重新加载（Plugins 页面禁用/启用，或重启 DSH），再到新会话或下一步确认 `pdf_docx_read` 可见；**只刷新 Web 页面不够**。
 
-安装/移除命令（把 `<REPO_PATH>` 换成仓库的绝对路径；如果 `dsh` 不在 PATH，用 DSH 安装目录的 CLI 或 Web 的 Plugins 页面）：
+从 GitHub 安装（如果 `dsh` 不在 PATH，用 DSH 安装目录的 CLI 或 Web 的 Plugins 页面）：
+
+```powershell
+dsh plugin --profile desktop add github:ToCyrene/dsh-pdf-docx-reader
+dsh plugin --profile desktop remove dsh-pdf-docx-reader
+```
+
+本地开发时可把源换成当前工作区（把 `<REPO_PATH>` 换成仓库的绝对路径）：
 
 ```powershell
 dsh plugin --profile desktop add link:<REPO_PATH>
-dsh plugin --profile desktop remove dsh-pdf-docx-reader
 ```
 
 不要为了排查本插件而改动其他已安装插件的启用状态。
@@ -209,7 +215,7 @@ dsh plugin --profile desktop remove dsh-pdf-docx-reader
 - **缓存是进程内内存**：不是持久缓存；重启或插件重载后失效。缓存满时会按 LRU 淘汰，这是预期行为。
 - **行号不是永久稳定 ID**：同一文件在 `inferHeadings` / `pageMarkers` / parser 版本变化后，行号可能变化；跨调用续读应使用当前返回的 `offset`。
 - **不要编辑 `node_modules/`**：依赖问题通过 `package.json` / lockfile 解决。
-- **当前源码目录没有 `.git`**（截至生成时）：不要假设可以 `git diff` / `git checkout` 恢复文件；若之后初始化了仓库，以实际状态为准。
+- **Git 工作区**：提交前先确认 `git status`；不要用 `git checkout` / `git reset --hard` 覆盖尚未提交的工作区改动。
 
 ## 12. 完成标准
 

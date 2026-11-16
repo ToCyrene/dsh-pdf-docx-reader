@@ -10,10 +10,10 @@ DeepSeek Harness 的本地文档阅读插件。为 agent 提供两个工具：
 ## 安装
 
 ```sh
-dsh plugin --profile desktop add link:<REPO_PATH>
+dsh plugin --profile desktop add github:ToCyrene/dsh-pdf-docx-reader
 ```
 
-把 `<REPO_PATH>` 替换为本仓库的绝对路径。也可以在 Web 的 **Plugins → Add plugin** 中选择本目录。安装后在 Plugins 页面可见；模型工具在下一步或新会话中出现。
+本地开发时，也可以用 `link:<REPO_PATH>` 安装当前工作区，把 `<REPO_PATH>` 替换为本仓库的绝对路径，或在 Web 的 **Plugins → Add plugin** 中选择本目录。安装后在 Plugins 页面可见；模型工具在下一步或新会话中出现。
 
 ## 使用
 
